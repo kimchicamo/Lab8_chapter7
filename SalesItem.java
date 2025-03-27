@@ -141,13 +141,14 @@ public class SalesItem
         return best;
     }
     
+    // Q10
     /**
      * Check whether the given rating is invalid. Return true if it is invalid.
      * Valid ratings are in the range [1..5].
      */
     private boolean ratingInvalid(int rating)
     {
-        return rating < 0 || rating > 5;
+        return rating < 1|| rating > 5;
     }
     
     /**

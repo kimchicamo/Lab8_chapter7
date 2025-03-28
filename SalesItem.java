@@ -66,7 +66,7 @@ public class SalesItem
         }
         
         if(findCommentByAuthor(author) != null) {  // reject mutiple comments by same author
-            return false;
+           return false;
         }
         
         comments.add(new Comment(author, text, rating));

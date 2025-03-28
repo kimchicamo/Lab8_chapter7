@@ -11,6 +11,8 @@ import org.junit.Test;
  */
 public class SalesItemTest
 {
+    private SalesItem salesIte1;
+
     /**
      * Default constructor for test class SalesItemTest
      */
@@ -26,6 +28,8 @@ public class SalesItemTest
     @Before
     public void setUp()
     {
+        salesIte1 = new SalesItem("kimia", 1000);
+        salesIte1.addComment("kimia", "good good ", 7);
     }
 
     /**
@@ -58,14 +62,15 @@ public class SalesItemTest
         assertEquals(1, salesIte1.getNumberOfComments());
     }
 
+    //Q16
     /**
      * Test that a comment using an illegal rating value is rejected.
      */
     @Test
     public void testIllegalRating()
     {
-        SalesItem salesIte1 = new SalesItem("Java For Complete Idiots, Vol 2", 19900);
-        assertEquals(false, salesIte1.addComment("Joshua Black", "Not worth the money. The font is too small.", -5));
+        SalesItem salesIte1 = new SalesItem("Java For Complete Idiots, Vol 2", 0);
+        assertEquals(true, salesIte1.addComment("Joshua Black", "Not worth the money. The font is too small.", 6));
     }
 
     /**
@@ -79,13 +84,17 @@ public class SalesItemTest
         assertEquals(1000, salesIte1.getPrice());
     }
 
+    
+    //Q16
     @Test
     public void addComment()
     {
-        SalesItem salesIte1 = new SalesItem("Brain Surgery for Dummies.", 9899);
-        assertEquals(true, salesIte1.addComment("Fred", "Great - I perform brain surgery every week now!", 4));
+        assertEquals(7, salesIte1.addComment("kimia", "good", 7));
+        assertEquals(5, salesIte1.addComment("kimia", "good good ", 5));
     }
 }
+
+
 
 
 

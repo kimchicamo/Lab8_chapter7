@@ -42,4 +42,18 @@ public class CommentTest
     public void tearDown()
     {
     }
+    //Q18
+    @Test
+    public void checkRatings()
+    {
+        SalesItem salesIte2 = new SalesItem("kimia", 100);
+        assertEquals(6, salesIte2.addComment("kimia", "good", 6));
+        Comment comment1 = new Comment("kimia", "bad", 7);
+        assertEquals(7, comment1.getRating());
+        comment1.upvote();
+        comment1.downvote();
+    }
 }
+
+
+

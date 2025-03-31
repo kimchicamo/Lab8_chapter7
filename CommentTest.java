@@ -14,12 +14,13 @@ import org.junit.jupiter.api.Test;
 public class CommentTest
 {
     private SalesItem salesIte1;
-
-    /**
+    private Comment comment, comment1;
+     /**
      * Default constructor for test class CommentTest
      */
     public CommentTest()
     {
+        
     }
 
     /**
@@ -31,6 +32,7 @@ public class CommentTest
     public void setUp()
     {
         salesIte1 = new SalesItem("ban", 1000);
+        comment = new Comment("Guy", "Good", 3);
     }
 
     /**

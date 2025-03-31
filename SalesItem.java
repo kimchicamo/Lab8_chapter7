@@ -17,6 +17,7 @@ public class SalesItem
     private String name;
     private int price;  // in cents
     private ArrayList<Comment> comments;
+    private Comment comment, comment1;
     
     /**
      * Create a new sales item.
@@ -26,6 +27,8 @@ public class SalesItem
         this.name = name;
         this.price = price;
         comments = new ArrayList<>();
+        comment = new Comment("Guy", "Good", 3);
+        comment1 = new Comment("Girl", "Good", 4);
     }
 
     /**

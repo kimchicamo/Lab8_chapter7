@@ -12,7 +12,7 @@ import org.junit.Test;
 public class SalesItemTest
 {
     private SalesItem salesIte1;
-
+    private Comment comment, comment1;
     /**
      * Default constructor for test class SalesItemTest
      */
@@ -30,6 +30,7 @@ public class SalesItemTest
     {
         salesIte1 = new SalesItem("kimia", 1000);
         salesIte1.addComment("kimia", "good good ", 7);
+        comment = new Comment("Guy", "Good", 3);
     }
 
     /**
@@ -70,7 +71,7 @@ public class SalesItemTest
     public void testIllegalRating()
     {
         SalesItem salesIte1 = new SalesItem("Java For Complete Idiots, Vol 2", 0);
-        assertEquals(true, salesIte1.addComment("Joshua Black", "Not worth the money. The font is too small.", 6));
+        assertEquals(true, salesIte1.addComment("Joshua Black", "Not worth the money. The font is too small.", 5));
     }
 
     /**
@@ -89,10 +90,27 @@ public class SalesItemTest
     @Test
     public void addComment()
     {
-        assertEquals(7, salesIte1.addComment("kimia", "good", 7));
+        assertEquals(2, salesIte1.addComment("kimia", "good", 2));
         assertEquals(5, salesIte1.addComment("kimia", "good good ", 5));
     }
+
+
+    
+    //Q19
+    @Test
+    public void findMostHelpfulComment()
+    {
+        assertEquals(3, salesIte1.addComment("kim", "badbad", 3));
+        java.lang.String string1 = comment.getFullDetails();
+        assertEquals(3, string1);
+        assertEquals(3, comment.getAuthor());
+        assertNull(comment.getAuthor());
+    }
+    
 }
+
+
+
 
 
 

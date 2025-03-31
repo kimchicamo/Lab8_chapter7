@@ -96,7 +96,7 @@ public class SalesItemTest
 
 
     
-    //Q19
+    //-Q19
     @Test
     public void findMostHelpfulComment()
     {
@@ -107,7 +107,17 @@ public class SalesItemTest
         assertNull(comment.getAuthor());
     }
     
+    //Q20
+    @Test
+    public void testWorksCorrrectly()
+    {
+        assertEquals(4, salesIte1.addComment("kim", "", 4));
+        assertEquals(3, salesIte1.getPrice());
+        java.lang.String string1 = comment.getFullDetails();
+        assertEquals(3, string1);
+    }
 }
+
 
 
 

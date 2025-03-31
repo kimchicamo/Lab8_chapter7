@@ -134,21 +134,35 @@ public class SalesItem
      * them.
      */
     public Comment findMostHelpfulComment()
-    {
-        if (comments.isEmpty()) {
+    { //Q29,30
+      if (comments.isEmpty()) {
             return null; 
         }
-        Comment best = comments.get(0);
-        int i = 1;
-        while (i < comments.size()) {  //Q21Replaced iterator with while loop
-           Comment current = comments.get(i);
-            if (current.getVoteCount() > best.getVoteCount()) {
-                best = current;
-            }
-            i++;
+      // Step 1: Find the highest vote count
+      int highestVote = 0;
+      for (Comment comment : comments) {
+        if (comment.getVoteCount() > highestVote) {
+            highestVote = comment.getVoteCount();
         }
-        return best;
-    }
+      }
+
+      // Step 2: Count how many comments have this highest vote count
+      Comment best = null;
+      int count = 0;
+      for (Comment comment : comments) {
+        if (comment.getVoteCount() == highestVote) {
+            best = comment;
+            count++;
+        }
+       }
+
+      // Step 3: If more than one comment has the highest vote, return null
+      if (count > 1) {
+        return null;
+      }
+
+      return best;  //  Return the most helpful comment 
+   }
     
     // Q10
     /**
